@@ -109,6 +109,7 @@ i.fa-lg {
 }
 #functioning nav {
   width: 95%;
+  align-self: center;
 }
 #functioning ul {
   list-style-type: none;
@@ -119,10 +120,11 @@ i.fa-lg {
 }
 #functioning li::before {
   content: counter(list);
-  border: 2px solid rgb(106, 78, 107);
+  color: white;
   border-radius: 50%;
   margin-right: 0.5rem;
   padding: 0.2rem 0.5rem;
+  background: #9356DC;
 }
 #functioning button {
   display: flex;

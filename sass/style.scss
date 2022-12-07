@@ -65,6 +65,7 @@ i.fa-lg {
     }
     nav {
         width: 95%;
+        align-self: center;
     }
 
     ul {
@@ -77,10 +78,11 @@ i.fa-lg {
     }
     li::before {
         content: counter(list);
-        border: 2px solid rgb(106, 78, 107);
+        color: white;
         border-radius: 50%;
         margin-right: 0.5rem; 
         padding: 0.2rem 0.5rem;
+        background: #9356DC;
       }
     button {
         display: flex;
