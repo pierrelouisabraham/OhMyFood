@@ -77,12 +77,13 @@ i.fa-lg {
         counter-increment: list;
     }
     li::before {
+        position: absolute;
         content: counter(list);
         color: white;
         border-radius: 50%;
-        margin-right: 0.5rem; 
         padding: 0.2rem 0.5rem;
         background: #9356DC;
+        margin-top: 0.5em;
       }
     button {
         display: flex;
