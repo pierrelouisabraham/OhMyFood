@@ -43,8 +43,169 @@ td, th {
   padding: 0;
 }
 
+h1, h2, h3, p {
+  font-family: "Raleway";
+}
+
 header {
-  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px;
+}
+
+#location {
+  display: flex;
+  background-color: rgb(223, 223, 223);
+  padding: 14px;
+  justify-content: center;
+}
+
+i.fa-lg {
+  font-size: 15px;
+  align-self: center;
+  margin-right: 10px;
+}
+
+#scout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(239, 238, 238);
+  padding: 30px 10px 30px 10px;
+}
+#scout h1 {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+#scout p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#exploration {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: 1px solid #a09a9e;
+  border-radius: 15px 15px 15px 15px;
+}
+#exploration p {
+  font-weight: 700;
+  color: white;
+}
+
+#functioning {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+#functioning h2 {
+  font-size: 23px;
+  font-weight: 700;
+}
+#functioning nav {
+  width: 95%;
+}
+#functioning ul {
+  list-style-type: none;
+}
+#functioning li {
+  margin-top: 10px;
+  counter-increment: list;
+}
+#functioning li::before {
+  content: counter(list);
+  border: 2px solid rgb(106, 78, 107);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+}
+#functioning button {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 15px 15px 15px 15px;
+  padding: 10px;
+  background-color: rgb(239, 238, 238);
+}
+
+#restaurants {
+  margin-bottom: 40px;
+  margin-top: 30px;
+  padding-top: 40px;
+  background-color: rgb(239, 238, 238);
+}
+#restaurants h2 {
+  padding-left: 10px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.thumbnails {
+  display: flex;
+  margin-top: 30px;
+  width: 96%;
+  justify-content: center;
+  padding-left: 10px;
+}
+.thumbnails a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  filter: drop-shadow(1px 2px 4px grey);
+  color: black;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+.thumbnails img {
+  border-radius: 20px 20px 0px 0px;
+}
+.thumbnails .description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.thumbnails .name {
+  margin-top: 10px;
+}
+.thumbnails i {
+  align-self: center;
+  margin-left: 30px;
+}
+
+footer {
+  background-color: black;
+}
+footer img {
+  width: 25%;
+}
+footer i {
+  color: #ffffff;
+  font-size: 8px;
+  width: 2%;
+}
+footer p {
+  color: #ffffff;
+  font-weight: 200;
+  font-size: 13px;
+  padding-top: 3px;
+  padding-left: 10px;
+}
+
+.footer-suggest {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.footer-suggest p {
+  font-weight: 400;
+  margin-left: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */

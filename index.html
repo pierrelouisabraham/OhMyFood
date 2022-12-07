@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://kit.fontawesome.com/5be0ef6e35.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5be0ef6e35.js" crossorigin="anonymous"></script>
     <title>OhmyFood</title>
 </head>
 <body>
     <header>
-        <img src="./images/logo/ohmyfood.png">
+        <img src="./images/resizeImages/ohmyfoodresize.png">
     </header>
     <div id="location">
         <i class="fa-solid fa-location-dot fa-lg"></i>
-        <p>Paris,Belleville</p>   
+        <p>Paris, Belleville</p>   
     </div>
     <section id="scout">
         <h1>Réservez le menu qui vous convient</h1>
-        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-        <button>
+        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+        <button id="exploration">
             <p>Explorez nos restaurants</p>
         </button>
     </section>
@@ -27,14 +30,27 @@
         <h2>
             Fonctionnement
         </h2>
-         <!-- mettre une liste-->
-        <div class="options">
-        </div>
-        <div class="options">
-        </div>
-        <div class="options">
-        </div>
-        <!-- mettre une liste-->
+         <nav>
+            <ul>
+                <li class="options">
+                    <button><i class="fa-solid fa-mobile-screen"></i>
+                        <p>Choisissez un restaurant</p>
+                    </button>
+                </li>
+                <li class="options">
+                    <button>
+                        <i class="fa-solid fa-list-ul"></i>
+                        <p>Composez votre menu</p>
+                    </button>
+                </li>
+                <li class="options">
+                    <button>
+                        <i class="fa-sharp fa-solid fa-store"></i>
+                        <p>Dégustez au restaurant</p>
+                    </button>
+                </li>
+            </ul>
+         </nav>
     </section>
     <section id="restaurants">
         <h2>
@@ -46,11 +62,13 @@
                 <div class="description">
                     <div class="name">
                         <h3>
+                            La palette du goût
                         </h3>
                         <p>
+                            ménilmontant
                         </p>
                     </div>
-                    <i class="heart"></i>
+                    <i class="fa-light fa-heart"></i><i class="heart"></i>
                 </div>
             </a>
         </article>
@@ -60,11 +78,13 @@
                 <div class="description">
                     <div class="name">
                         <h3>
+                            La note enchantée 
                         </h3>
                         <p>
+                            Charonne
                         </p>
                     </div>
-                    <i class="heart"></i>
+                    <i class="fa-light fa-heart"></i><i class="heart"></i>
                 </div>
             </a>
         </article>
@@ -74,11 +94,13 @@
                 <div class="description">
                     <div class="name">
                         <h3>
+                            À la française
                         </h3>
                         <p>
+                            Cité Rouge
                         </p>
                     </div>
-                    <i class="heart"></i>
+                    <i class="fa-light fa-heart"></i><i class="heart"></i>
                 </div>
             </a>
         </article>
@@ -88,23 +110,25 @@
                 <div class="description">
                     <div class="name">
                         <h3>
+                            Le délice des sens
                         </h3>
                         <p>
+                            Folie-Méricourt
                         </p>
                     </div>
-                    <i class="heart"></i>
+                    <i class="fa-light fa-heart"></i><i class="heart"></i>
                 </div>
             </a>
         </article>
     </section>
     <footer>
-       <img>
+       <img src="./images/logo/ohmyfood@2x.svg">
        <div class="footer-suggest">
-        <i></i>
+        <i class="fa-solid fa-utensils"></i>
         <p>Proposer un restaurant</p>
        </div>
        <div class="footer-suggest">
-        <i></i>
+        <i class="fa-solid fa-handshake-angle"></i>
         <p>Devenir Partenaire</p>
        </div>
        <p>Mentions Légales</p>
