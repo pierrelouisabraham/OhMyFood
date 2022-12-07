@@ -108,18 +108,20 @@ i.fa-lg {
         border-radius: 50%;
         padding: 0.2rem 0.5rem;
         background: $secondary;
-        margin-top: 0.5em;
+        margin-top: 0.7em;
+        margin-right: 6em;
     }
     button {
         display: flex;
         justify-content: space-around;
         width: 100%;
         border-radius: 15px 15px 15px 15px;
-        padding: 10px;
+        padding: 16px;
         background-color: rgb(239, 238, 238);
-
+        border: 1px;
+        
         &:hover {
-            background: rgba($secondary, 0.5);
+            background: rgba($secondary, 0.2);
         }
     }
 }
@@ -176,7 +178,7 @@ i.fa-lg {
         font-size: 36px;
         font-weight: 100;
         transition: all 0.3s linear 2s;
-        
+
         &:hover {
             font-weight: 900;
             color: #9356DC;
