@@ -4,6 +4,27 @@ h1, h2, h3, p {
     font-family: "Raleway";
 }
 
+.loader {
+    position: absolute;
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #9356DC; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    padding: 100px;
+    margin-top: 300px;
+    margin-left: 38px;
+    &:hover {
+        display: none;
+    }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 header {
    display: flex;
    justify-content: center;
@@ -84,7 +105,7 @@ i.fa-lg {
         padding: 0.2rem 0.5rem;
         background: #9356DC;
         margin-top: 0.5em;
-      }
+    }
     button {
         display: flex;
         justify-content: space-around;
@@ -114,6 +135,7 @@ i.fa-lg {
     width: 96%;
     justify-content: center;
     padding-left: 10px;
+
     a {
         display: flex;
         flex-direction: column;
@@ -125,9 +147,11 @@ i.fa-lg {
         padding-bottom: 10px;
         text-decoration: none;
     }
+
     img {
         border-radius: 20px 20px 0px 0px;
     }
+
     .description {
         display: flex;
         flex-direction: row;
@@ -169,6 +193,7 @@ footer {
     display: flex;
     align-items: center;
     padding-left: 10px;
+
     p {
         font-weight: 400;
         margin-left: 2px;
