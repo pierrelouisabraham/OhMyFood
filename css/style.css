@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -44,22 +43,22 @@ td, th {
   padding: 0;
 }
 
-h1, h2, h3, p {
+.body {
   font-family: "Raleway";
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (max-width: 600px) {
   .loader {
-    display: none;
-    position: absolute;
+    position: fixed;
     border: 16px solid #f3f3f3;
     border-top: 16px solid #9356DC;
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    animation: spin 2s linear infinite;
-    margin-top: 200px;
-    margin-left: 58px;
+    animation: spin linear 1s 1 forwards;
+    margin-top: 425px;
+    margin-left: 102px;
+    z-index: 1;
   }
   @keyframes spin {
     0% {
@@ -68,12 +67,20 @@ h1, h2, h3, p {
     100% {
       transform: rotate(360deg);
     }
+    to {
+      visibility: hidden;
+      opacity: 0;
+      z-index: 0;
+    }
   }
   header {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 14px;
+  }
+  header i {
+    margin-right: 50px;
   }
   #location {
     display: flex;
@@ -110,10 +117,14 @@ h1, h2, h3, p {
     background: linear-gradient(#FF79DA, #9356DC);
     border: 1px solid #a09a9e;
     border-radius: 15px 15px 15px 15px;
+    box-shadow: 1px 4px 7px 1px #484647;
   }
   #exploration p {
     font-weight: 700;
     color: white;
+  }
+  #exploration:hover {
+    filter: brightness(110%);
   }
   #functioning {
     display: flex;
@@ -125,7 +136,7 @@ h1, h2, h3, p {
     font-weight: 700;
   }
   #functioning nav {
-    width: 95%;
+    max-width: 800px;
     align-self: center;
   }
   #functioning ul {
@@ -193,24 +204,166 @@ h1, h2, h3, p {
   .thumbnails .description {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+  .thumbnails .description span {
+    margin-right: 25px;
   }
   .thumbnails .name {
-    margin-top: 10px;
-    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
   }
-  .thumbnails span {
-    content: "♡";
-    font-size: 36px;
-    font-weight: 100;
-    transition: all 0.3s linear 2s;
+  .thumbnails .name h3 {
+    font-weight: 700;
+    font-size: 18px;
   }
-  .thumbnails span:hover {
+  .thumbnails .fa-2x {
+    transition: all 450ms;
+    font-size: 16px;
+    align-self: center;
+  }
+  .thumbnails .fa-2x:hover {
+    color: #9559df;
     font-weight: 900;
-    color: #9356DC;
+  }
+  .fa-arrow-left {
+    color: black;
+  }
+  .img-restau {
+    position: absolute;
+  }
+  .menu {
+    border-radius: 20px 20px 20px 20px;
+    background-color: #f5f1f5;
+    margin-bottom: 14px;
+    padding-bottom: 27px;
+    position: relative;
+    margin-top: 206px;
+    padding-top: 20px;
+  }
+  .menu #exploration {
+    display: flex;
+    margin-left: 87px;
+    margin-top: 30px;
+    padding: 10px 25px 10px 25px;
+  }
+  .list {
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+  .list h2 {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .list li {
+    margin-top: 10px;
+  }
+  .list li:nth-child(1) {
+    animation: fade 1s 0.1 ease-in;
+  }
+  .list li:nth-child(2) {
+    animation: fade 1s 0.2 ease-in;
+  }
+  .list li:nth-child(3) {
+    animation: fade 1s 0.3 ease-in;
+  }
+  .list li:nth-child(4) {
+    animation: fade 1s 0.4 ease-in;
+  }
+  .list button {
+    display: flex;
+    position: relative;
+    background-color: #ffffff;
+    border: 2px;
+    border-radius: 10px;
+    min-width: 95%;
+    padding: 9px;
+    justify-content: space-between;
+  }
+  .dish-button:hover .checkbox {
+    background-color: aqua;
+    border-radius: 0 10px 10px 0;
+    transition: width 1s;
+    transition: transform 500ms;
+    animation-duration: 2s;
+    animation-name: slide;
+    animation-direction: normal;
+  }
+  .checkbox {
+    background-color: aqua;
+    width: 0;
+    border-radius: 0 12px 12px 0;
+    border-radius: 0 12px 12px 0;
+    transition: width;
+    animation-duration: 2s;
+  }
+  .checkbox i.fa-circle-check {
+    display: block;
+    opacity: 1;
+    font-size: 25px;
+    padding-top: 18px;
+    color: white;
+    transform: rotate(360deg);
+    --fa-animation-duration: 3s;
+  }
+  @keyframes slide {
+    0% {
+      margin-left: 0%;
+      width: 0px;
+    }
+    100% {
+      margin-right: 0%;
+      width: 20%;
+    }
+  }
+  @keyframes rotation {
+    from {
+      transition: rotate(0deg);
+    }
+    to {
+      transition: rotate(180deg);
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .restaurant-name {
+    display: flex;
+    justify-content: space-between;
+  }
+  .restaurant-name h1 {
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .restaurant-name .fa-2x {
+    padding-right: 15px;
+    transition: linear 450ms;
+    font-size: 18px;
+  }
+  .restaurant-name .fa-2x:hover {
+    color: #9559df;
+    font-weight: 900;
+  }
+  .dish {
+    font-weight: 700;
+  }
+  .composition {
+    font-weight: 400;
+  }
+  .price {
+    align-self: flex-end;
+    font-weight: 600;
+    font-size: 11px;
   }
   footer {
-    background-color: black;
+    background-color: #353535;
   }
   footer img {
     width: 25%;

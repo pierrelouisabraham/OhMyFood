@@ -4,37 +4,49 @@ $primary: #FF79DA;
 $secondary: #9356DC;
 $thirdly: #99E2D0;
 
-h1, h2, h3, p {
+.body {
     font-family: "Raleway";
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (max-width: 600px) {
     
 
 .loader {
-    display:none;
-    position: absolute;
+    position: fixed;
     border: 16px solid #f3f3f3; 
     border-top: 16px solid $secondary; 
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    animation: spin 2s linear infinite;
-    margin-top: 200px;
-    margin-left: 58px;
+    animation: spin linear 1s 1 forwards;
+    margin-top: 425px;
+    margin-left: 102px;
+    z-index: 1;
   }
   
   @keyframes spin {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    100% { transform: rotate(360deg);     
+       
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+        z-index: 0;
+    }
   }
 
 header {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14px;
+
+    i {
+        margin-right: 50px;
+    }
 }
+
 
 #location {
     display:flex;
@@ -74,9 +86,13 @@ i.fa-lg {
     background: linear-gradient($primary, $secondary);
     border: 1px solid #a09a9e;
     border-radius: 15px 15px 15px 15px;
+    box-shadow: 1px 4px 7px 1px #484647;
     p {
         font-weight: 700;
         color: white;
+    }
+    &:hover {
+        filter: brightness(110%);
     }
 }
 
@@ -89,7 +105,7 @@ i.fa-lg {
         font-weight: 700;
     }
     nav {
-        width: 95%;
+        max-width: 800px;
         align-self: center;
     }
 
@@ -146,6 +162,7 @@ i.fa-lg {
     justify-content: center;
     padding-left: 10px;
     padding-bottom: 20px;
+    
     a {
         display: flex;
         flex-direction: column;
@@ -165,58 +182,214 @@ i.fa-lg {
     .description {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .name{
-        margin-top: 10px;
-        margin-right: 40px;
-    }
-
-    span {
-        content: "\2661";
-        font-size: 36px;
-        font-weight: 100;
-        transition: all 0.3s linear 2s;
-
-        &:hover {
-            font-weight: 900;
-            color: #9356DC;
+        justify-content: space-between;
+        span {
+            margin-right: 25px;
         }
     }
-}
 
-footer {
-    background-color: black;
-    
-    img {
-        width: 25%;
+    .name {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        h3 {
+            font-weight: 700;
+            font-size: 18px;
+        }
     }
 
-    i {
-        color: #ffffff;
-        font-size: 8px;
-        width: 2%;
+        .fa-2x {
+         transition: all 450ms;
+         font-size: 16px;
+         align-self: center;
+         &:hover {   
+            color: #9559df;
+            font-weight: 900;
+        }
+        }
     }
 
-    p {
-        color: #ffffff;
-        font-weight: 200;
-        font-size: 13px;
-        padding-top: 3px;
+    .fa-arrow-left {
+        color: black;
+    }
+
+    .img-restau {
+        position: absolute;
+    }
+
+    .menu {
+        border-radius: 20px 20px 20px 20px;
+        background-color: #f5f1f5;;
+        margin-bottom: 14px;
+        padding-bottom: 27px;
+        position: relative;
+        margin-top: 206px;
+        padding-top: 20px;
+
+        #exploration {
+            display: flex;
+            margin-left: 87px;
+            margin-top: 30px;
+            padding: 10px 25px 10px 25px;
+        }
+
+    }
+
+    .list {
+        margin-top: 20px;
         padding-left: 10px;
-    }
-}
+        
+        h2 {
+            font-size: 15px;
+            font-weight: 400;
+        }
+        li {
+            margin-top: 10px;
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    animation: fade 1s #{$i * .1} ease-in;
+                }
+            }
+        }
 
-.footer-suggest{
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
+        button {
+            display: flex;
+            position: relative;
+            background-color: #ffffff;
+            border: 2px;
+            border-radius: 10px;
+            min-width: 95%;
+            padding: 9px;
+            justify-content: space-between;
+        }
+       
+    }
+
+    .dish-button:hover .checkbox{
+        background-color: aqua;
+        border-radius: 0 10px 10px 0;
+        transition: width 1s;
+        transition: transform 500ms;
+        animation-duration: 2s; 
+        animation-name: slide;
+        animation-direction: normal;
+    }
+
+    .checkbox {
+        background-color:aqua;
+        width: 0;
+        border-radius: 0 12px 12px 0;
+        border-radius: 0 12px 12px 0;
+        transition: width ;
+        animation-duration: 2s;
+        i.fa-circle-check {
+            display: block;
+            opacity: 1;
+            font-size: 25px;
+            padding-top:18px;
+            color: white;
+            transform: rotate(360deg);
+            --fa-animation-duration: 3s;
+        }
+
+    }
+
+    @keyframes slide{
+        0%{
+          margin-left: 0%;
+          width: 0px;
+        }
+        100%{
+          margin-right: 0%;
+          width: 20%;
+        }
+    }
+
+    @keyframes rotation {
+        from {
+            transition:rotate(0deg);
+        }
+
+        to {
+            transition:rotate(180deg);
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+
+    .restaurant-name {
+        display: flex;
+        justify-content: space-between;
+
+        h1{
+            padding-left: 10px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .fa-2x {
+            padding-right: 15px;
+            transition: linear 450ms;
+            font-size: 18px;
+         &:hover {   
+             color: #9559df;
+             font-weight: 900;
+         }
+        }
+    }
+
+    .dish {
+        font-weight: 700;
+    }
+
+    .composition {
+        font-weight: 400;
+    }
+
+    .price {
+        align-self: flex-end;
+        font-weight: 600;
+        font-size: 11px;
+    }
+    
+    footer {
+        background-color: #353535;
+    
+        img {
+           width: 25%;
+        }
+
+        i {
+            color: #ffffff;
+            font-size: 8px;
+            width: 2%;
+     }
+
+        p {
+            color: #ffffff;
+            font-weight: 200;
+            font-size: 13px;
+            padding-top: 3px;
+            padding-left: 10px;
+        }
+    }
+
+    .footer-suggest{
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
     
 
-    p {
+        p {
         font-weight: 400;
         margin-left: 2px;
+        }
     }
-}
 }
