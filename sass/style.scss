@@ -261,27 +261,22 @@ i.fa-lg {
             min-width: 95%;
             padding: 9px;
             justify-content: space-between;
+            overflow: hidden;
         }
        
     }
 
-    .dish-button:hover .checkbox{
-        background-color: aqua;
-        border-radius: 0 10px 10px 0;
-        transition: width 1s;
-        transition: transform 500ms;
-        animation-duration: 2s; 
-        animation-name: slide;
-        animation-direction: normal;
+    .description-menu {
+        width: 60%;
     }
 
     .checkbox {
+        display: flex;
         position: relative;
         background-color:aqua;
-        width: 0;
+        margin-left: -200px;
+        width: 30%;
         border-radius: 0 12px 12px 0;
-        transition: width ;
-        animation-duration: 2s;
         i.fa-regular {
             opacity: 1;
             font-weight: 700;
@@ -291,10 +286,20 @@ i.fa-lg {
             font-size: 10px;
             color: white;
             transform: rotate(360deg);
-            --fa-animation-duration: 3s;
         }
 
     }
+
+    .dish-button:hover .checkbox{
+        background-color: aqua;
+        border-radius: 0 10px 10px 0;
+        transition: margin-left 1s;
+        animation-duration: 2s; 
+        animation-name: slide;
+        animation-direction: normal;
+    }
+
+    
 
     @keyframes font-icon{
         from { opacity: 0; }
@@ -304,11 +309,11 @@ i.fa-lg {
     @keyframes slide{
         0%{
           
-          width: 0px;
+            margin-left: -200px;
         }
         100%{
           
-          width: 20%;
+            margin-left: 0;
         }
     }
 
