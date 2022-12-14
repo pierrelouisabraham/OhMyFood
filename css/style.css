@@ -291,6 +291,7 @@ td, th {
     animation-direction: normal;
   }
   .checkbox {
+    position: relative;
     background-color: aqua;
     width: 0;
     border-radius: 0 12px 12px 0;
@@ -298,10 +299,18 @@ td, th {
     transition: width;
     animation-duration: 2s;
   }
+  .checkbox:nth-child:all {
+    font-size: 0px;
+  }
+  .checkbox i.fa-regular {
+    font-weight: 700;
+    color: aqua;
+  }
   .checkbox i.fa-circle-check {
-    display: block;
+    display: inline-block;
     opacity: 1;
-    font-size: 25px;
+    align-items: center;
+    font-size: 15px;
     padding-top: 18px;
     color: white;
     transform: rotate(360deg);
@@ -309,11 +318,9 @@ td, th {
   }
   @keyframes slide {
     0% {
-      margin-left: 0%;
       width: 0px;
     }
     100% {
-      margin-right: 0%;
       width: 20%;
     }
   }

@@ -276,16 +276,25 @@ i.fa-lg {
     }
 
     .checkbox {
+        position: relative;
         background-color:aqua;
         width: 0;
         border-radius: 0 12px 12px 0;
         border-radius: 0 12px 12px 0;
         transition: width ;
         animation-duration: 2s;
+        &:nth-child:all {
+            font-size: 0px;
+        }
+        i.fa-regular {
+            font-weight: 700;
+            color: aqua;
+        }
         i.fa-circle-check {
-            display: block;
+            display: inline-block;
             opacity: 1;
-            font-size: 25px;
+            align-items: center;
+            font-size: 15px;
             padding-top:18px;
             color: white;
             transform: rotate(360deg);
@@ -296,11 +305,11 @@ i.fa-lg {
 
     @keyframes slide{
         0%{
-          margin-left: 0%;
+          
           width: 0px;
         }
         100%{
-          margin-right: 0%;
+          
           width: 20%;
         }
     }
