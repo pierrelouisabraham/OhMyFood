@@ -248,6 +248,21 @@ td, th {
     margin-top: 30px;
     padding: 10px 25px 10px 25px;
   }
+  .menu li:nth-child(1) {
+    animation: fade 1s steps(1, start);
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+  .menu li:nth-child(2) {
+    animation: fade 1s steps(2, start);
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+  }
+  .menu li:nth-child(3) {
+    animation: fade 1s steps(3, start);
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+  }
   .list {
     margin-top: 20px;
     padding-left: 10px;
@@ -255,73 +270,64 @@ td, th {
   .list h2 {
     font-size: 15px;
     font-weight: 400;
+    border-bottom: 5px #99E2D0;
   }
   .list li {
     margin-top: 10px;
+    visibility: hidden;
   }
-  .list li:nth-child(1) {
-    animation: fade 1s 0.1 ease-in;
-  }
-  .list li:nth-child(2) {
-    animation: fade 1s 0.2 ease-in;
-  }
-  .list li:nth-child(3) {
-    animation: fade 1s 0.3 ease-in;
-  }
-  .list li:nth-child(4) {
-    animation: fade 1s 0.4 ease-in;
-  }
-  .list button {
+  .dish-button {
     display: flex;
     position: relative;
     background-color: #ffffff;
     border: 2px;
     border-radius: 10px;
-    min-width: 95%;
-    padding: 9px;
+    min-width: 80%;
     justify-content: space-between;
     overflow: hidden;
   }
   .description-menu {
-    width: 60%;
+    padding: 9px;
+    max-width: 80%;
+    min-width: 70%;
+  }
+  .price {
+    padding: 9px;
+    max-width: 20%;
+    min-width: 20%;
   }
   .checkbox {
     display: flex;
     position: relative;
     background-color: aqua;
-    margin-left: -200px;
-    width: 30%;
+    margin-left: 100px;
     border-radius: 0 12px 12px 0;
+    align-items: center;
+    width: 200px;
+    text-align: center;
   }
   .checkbox i.fa-regular {
-    opacity: 1;
     font-weight: 700;
     color: aqua;
   }
   .checkbox i.fa-circle-check {
-    font-size: 10px;
+    font-size: 15px;
     color: white;
     transform: rotate(360deg);
   }
   .dish-button:hover .checkbox {
-    background-color: aqua;
-    border-radius: 0 10px 10px 0;
-    transition: margin-left 1s;
     animation-duration: 2s;
-    animation-name: slide;
+    animation: slide 2s;
     animation-direction: normal;
   }
-  @keyframes font-icon {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  .dish-button:hover i.fa-circle-check {
+    animation-duration: 2s;
+    animation: slide 2s;
+    animation-direction: normal;
   }
   @keyframes slide {
     0% {
-      margin-left: -200px;
+      margin-left: 100%;
     }
     100% {
       margin-left: 0;
@@ -337,10 +343,10 @@ td, th {
   }
   @keyframes fade {
     from {
-      opacity: 0;
+      visibility: hidden;
     }
     to {
-      opacity: 1;
+      visibility: visible;
     }
   }
   .restaurant-name {
