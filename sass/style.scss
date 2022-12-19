@@ -279,6 +279,14 @@ i.fa-lg {
         min-width: 80%;
         justify-content: space-between;
         overflow: hidden;
+
+        .checkbox{
+            animation-name: slideBoxOut;
+            animation-duration: 1.5s;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+        }
+        
     }
 
     .description-menu {
@@ -296,10 +304,11 @@ i.fa-lg {
     .checkbox {
         display: flex;
         position: relative;
-        background-color:aqua;
+        background-color:black;
         margin-left: 100px;
         border-radius: 0 12px 12px 0;
-        width: 200px; 
+        width: 200px;
+        
         i.fa-regular {
             font-weight: 700;
             color: aqua;
@@ -308,22 +317,35 @@ i.fa-lg {
             position: absolute;
             font-size: 15px;
             color: white;
-            top: 50%;
-            left: 50%;
+            top:35%;
+            left:35%;
         }
 
     }
 
-    .dish-button:hover .checkbox{
-        animation-duration: 2s;
-        animation: slide 2s;
-        animation-direction: normal;
+    .dish-button:hover {
+
+        .checkbox{
+            animation-name: slideBoxIn;
+            animation-duration: 1.5s;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+        }
+
+        .fa-circle-check {
+            animation: rotateBox;
+            animation-duration: 0.8s;
+            animation-delay: 0.7s;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+        }
+
     }
 
-    @keyframes slide{
+
+    @keyframes slideBoxIn{
         0%{
-          
-            margin-left: 100%;
+            margin-left: 100px;
         }
         100%{
           
@@ -331,13 +353,22 @@ i.fa-lg {
         }
     }
 
-    @keyframes rotation {
-        from {
-            transition:rotate(0deg);
+    @keyframes slideBoxOut{
+        0%{
+            margin-left: 0px;
         }
+        100%{
+          
+            margin-left: 100px;
+        }
+    }
 
-        to {
-            transition:rotate(180deg);
+    @keyframes rotateBox {
+        0% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(0deg);
         }
     }
 
