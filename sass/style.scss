@@ -4,8 +4,12 @@ $primary: #FF79DA;
 $secondary: #9356DC;
 $thirdly: #99E2D0;
 
-.body {
-    font-family: "Raleway";
+h1, h2, h3 {
+    font-family: "Shrikhand";
+}
+
+p {
+    font-family: "Roboto";
 }
 
 @media only screen and (max-width: 600px) {
@@ -84,15 +88,17 @@ i.fa-lg {
   
 #exploration {
     background: linear-gradient($primary, $secondary);
-    border: 1px solid #a09a9e;
-    border-radius: 15px 15px 15px 15px;
-    box-shadow: 1px 4px 7px 1px #484647;
+    border: 0px solid #a09a9e;
+    border-radius: 21px 21px 21px 21px;
+    
+    box-shadow: 1px 4px 5px 1px #484647;
     p {
-        font-weight: 700;
+        font-weight: 400;
         color: white;
     }
     &:hover {
         filter: brightness(110%);
+        box-shadow: 1px 4px 8px 1px #484647;
     }
 }
 
@@ -103,10 +109,6 @@ i.fa-lg {
     h2 {
         font-size: 23px;
         font-weight: 700;
-    }
-    nav {
-        max-width: 800px;
-        align-self: center;
     }
 
     ul {
@@ -150,8 +152,7 @@ i.fa-lg {
 
     h2 {
         padding-left: 10px;
-        font-size: 23px;
-        font-weight: 700;
+        font-size: 20px;
     }
 }
 
@@ -230,7 +231,6 @@ i.fa-lg {
 
         #exploration {
             display: flex;
-            margin-left: 87px;
             margin-top: 30px;
             padding: 10px 25px 10px 25px;
         }
@@ -273,7 +273,6 @@ i.fa-lg {
         border: 2px;
         border-radius: 10px;
         min-width: 80%;
-        
         justify-content: space-between;
         overflow: hidden;
     }
@@ -296,18 +295,17 @@ i.fa-lg {
         background-color:aqua;
         margin-left: 100px;
         border-radius: 0 12px 12px 0;
-        align-items: center;
         width: 200px; 
-        text-align: center;
         i.fa-regular {
             font-weight: 700;
             color: aqua;
         }
         i.fa-circle-check {
+            position: absolute;
             font-size: 15px;
             color: white;
-            transform: rotate(360deg);
-           
+            top: 50%;
+            left: 50%;
         }
 
     }
@@ -387,6 +385,11 @@ i.fa-lg {
         align-self: flex-end;
         font-weight: 600;
         font-size: 11px;
+    }
+
+    #explore {
+        display: flex;
+        justify-content: center;
     }
     
     footer {
