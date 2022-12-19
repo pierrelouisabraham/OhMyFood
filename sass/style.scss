@@ -203,10 +203,10 @@ i.fa-lg {
          transition: all 450ms;
          font-size: 16px;
          align-self: center;
-         &:hover {   
-            color: #9559df;
-            font-weight: 900;
-        }
+            &:hover {   
+                color: #9559df;
+                font-weight: 900;
+            }
         }
     }
 
@@ -234,12 +234,16 @@ i.fa-lg {
             margin-top: 30px;
             padding: 10px 25px 10px 25px;
         }
-        li{
+
+        li {
             @for $i from 1 through 3 {
                 &:nth-child(#{$i}) {
-                    animation: fade 1s steps($i, start);
+                    animation-name: fade;
+                    animation-iteration-count: 1;
+                    animation-timing-function: ease-in;
+                    animation-duration: 0.750s; 
+                    animation-delay: 0.3s * $i;
                     animation-fill-mode: forwards;
-                    animation-delay: (1s *$i);
                 }
             }
         }
@@ -259,13 +263,13 @@ i.fa-lg {
         li {
             margin-top: 10px;
             visibility: hidden;
-            
+            opacity: 0;
         }
 
         
        
     }
-    //bouton - ombre puis + ombre
+
     .dish-button {
         display: flex;
         position: relative;
@@ -316,12 +320,6 @@ i.fa-lg {
         animation-direction: normal;
     }
 
-    .dish-button:hover i.fa-circle-check {
-        animation-duration: 2s;
-        animation: slide 2s;
-        animation-direction: normal;
-    }
-
     @keyframes slide{
         0%{
           
@@ -346,9 +344,21 @@ i.fa-lg {
     @keyframes fade {
         from {
             visibility: hidden;
+            opacity: 0;
         }
         to {
             visibility: visible;
+            opacity: 100%;
+        }
+    }
+
+    @keyframes likeAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            color: #9559df;
         }
     }
 
@@ -363,12 +373,17 @@ i.fa-lg {
         }
 
         .fa-2x {
-            padding-right: 15px;
-            transition: linear 450ms;
+            padding-right: 15px;        
             font-size: 18px;
+            opacity: 1;
+
          &:hover {   
-             color: #9559df;
-             font-weight: 900;
+            color: #9559df;
+            font-weight: 900;
+            animation-name: likeAnimation;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 1s;
          }
         }
     }
