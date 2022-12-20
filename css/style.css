@@ -1,10 +1,10 @@
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, p, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, p, h4, h5, h6 {
   font-size: 100%;
   font-weight: normal;
 }
@@ -43,7 +43,7 @@ td, th {
   padding: 0;
 }
 
-h1, h2, h3 {
+h1, h2, p {
   font-family: "Shrikhand";
 }
 
@@ -227,7 +227,7 @@ p {
     flex-direction: column;
     margin-left: 15px;
   }
-  .thumbnails .name h3 {
+  .thumbnails .name p {
     font-weight: 700;
     font-size: 18px;
   }
@@ -335,10 +335,10 @@ p {
   .checkbox {
     display: flex;
     position: relative;
-    background-color: black;
+    background-color: #99E2D0;
     margin-left: 100px;
     border-radius: 0 12px 12px 0;
-    width: 200px;
+    width: 30%;
   }
   .checkbox i.fa-regular {
     font-weight: 700;
@@ -413,7 +413,7 @@ p {
   }
   .restaurant-name h1 {
     padding-left: 10px;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 900;
   }
   .restaurant-name .fa-2x {
@@ -430,10 +430,14 @@ p {
     animation-duration: 1s;
   }
   .dish {
+    font-size: 14px;
     font-weight: 700;
+    text-overflow: ellipsis;
   }
   .composition {
+    font-size: 12px;
     font-weight: 400;
+    text-overflow: ellipsis;
   }
   .price {
     align-self: flex-end;

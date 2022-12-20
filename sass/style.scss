@@ -4,7 +4,7 @@ $primary: #FF79DA;
 $secondary: #9356DC;
 $thirdly: #99E2D0;
 
-h1, h2, h3 {
+h1, h2, p {
     font-family: "Shrikhand";
 }
 
@@ -209,7 +209,7 @@ i.fa-lg {
         display: flex;
         flex-direction: column;
         margin-left: 15px;
-        h3 {
+        p {
             font-weight: 700;
             font-size: 18px;
         }
@@ -280,10 +280,7 @@ i.fa-lg {
             margin-top: 10px;
             visibility: hidden;
             opacity: 0;
-        }
-
-        
-       
+        }   
     }
 
     .dish-button {
@@ -320,10 +317,10 @@ i.fa-lg {
     .checkbox {
         display: flex;
         position: relative;
-        background-color:black;
+        background-color: $thirdly;
         margin-left: 100px;
         border-radius: 0 12px 12px 0;
-        width: 200px;
+        width: 30%;
         
         i.fa-regular {
             font-weight: 700;
@@ -415,7 +412,7 @@ i.fa-lg {
 
         h1{
             padding-left: 10px;
-            font-size: 18px;
+            font-size: 12px;
             font-weight: 900;
         }
 
@@ -436,11 +433,15 @@ i.fa-lg {
     }
 
     .dish {
+        font-size: 14px;
         font-weight: 700;
+        text-overflow: ellipsis;
     }
 
     .composition {
+        font-size: 12px;
         font-weight: 400;
+        text-overflow: ellipsis;
     }
 
     .price {
