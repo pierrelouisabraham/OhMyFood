@@ -79,12 +79,14 @@ p {
   }
   header {
     display: flex;
-    justify-content: center;
     align-items: center;
     margin: 14px;
   }
   header i {
     align-items: flex-start;
+  }
+  header img {
+    margin-left: 75px;
   }
   #location {
     display: flex;
@@ -170,7 +172,7 @@ p {
     background: rgba(147, 86, 220, 0.2);
   }
   #restaurants {
-    margin-bottom: 40px;
+    padding-bottom: 20px;
     margin-top: 30px;
     padding-top: 40px;
     background-color: rgb(239, 238, 238);
@@ -200,6 +202,17 @@ p {
   }
   .thumbnails img {
     border-radius: 20px 20px 0px 0px;
+  }
+  .thumbnails .new {
+    display: flex;
+    position: absolute;
+    background: #99E2D0;
+    color: #366636;
+    margin-left: 75%;
+    margin-bottom: 60%;
+    padding: 5px 7px;
+    font-family: "Roboto";
+    font-size: 15px;
   }
   .thumbnails .description {
     display: flex;
@@ -269,6 +282,14 @@ p {
     animation-timing-function: ease-in;
     animation-duration: 0.75s;
     animation-delay: 0.9s;
+    animation-fill-mode: forwards;
+  }
+  .menu li:nth-child(4) {
+    animation-name: fade;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.75s;
+    animation-delay: 1.2s;
     animation-fill-mode: forwards;
   }
   .list {
@@ -436,7 +457,7 @@ p {
   }
   footer p {
     color: #ffffff;
-    font-weight: 200;
+    font-weight: 100;
     font-size: 13px;
     padding-top: 3px;
     padding-left: 10px;
@@ -447,7 +468,7 @@ p {
     padding-left: 10px;
   }
   .footer-suggest p {
-    font-weight: 400;
+    font-weight: 100;
     margin-left: 2px;
   }
 }
