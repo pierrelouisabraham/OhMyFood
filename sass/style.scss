@@ -12,6 +12,8 @@ p {
     font-family: "Roboto";
 }
 
+
+
 @media only screen and (max-width: 600px) {
     
 
@@ -304,21 +306,19 @@ i.fa-lg {
 
     .description-menu {
         padding: 9px;
-        max-width: 80%;
-        min-width: 70%;
+        width: 85%;
     }
 
     .price {
         padding: 9px;
-        max-width: 20%;
-        min-width: 20%;
+        width: 16%;
     }
 
     .checkbox {
         display: flex;
         position: relative;
         background-color: $thirdly;
-        margin-left: 100px;
+        margin-right: -100px;
         border-radius: 0 12px 12px 0;
         width: 30%;
         
@@ -358,21 +358,21 @@ i.fa-lg {
 
     @keyframes slideBoxIn{
         0%{
-            margin-left: 100px;
+            margin-right: -100px;
         }
         100%{
           
-            margin-left: 0;
+            margin-right: 0;
         }
     }
 
     @keyframes slideBoxOut{
         0%{
-            margin-left: 0px;
+            margin-right: 0px;
         }
         100%{
           
-            margin-left: 100px;
+            margin-right: -100px;
         }
     }
 
@@ -427,7 +427,7 @@ i.fa-lg {
             animation-name: likeAnimation;
             animation-iteration-count: 1;
             animation-timing-function: ease-in;
-            animation-duration: 1s;
+            animation-duration: 0.6s;
          }
         }
     }
