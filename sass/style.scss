@@ -412,7 +412,7 @@ i.fa-lg {
 
         h1{
             padding-left: 10px;
-            font-size: 12px;
+            font-size: 17px;
             font-weight: 900;
         }
 
@@ -436,12 +436,16 @@ i.fa-lg {
         font-size: 14px;
         font-weight: 700;
         text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     .composition {
         font-size: 12px;
         font-weight: 400;
         text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     .price {
