@@ -1,0 +1,12 @@
+@mixin spin-right-round {
+    position: fixed;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid $secondary;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin linear 1s 1 forwards;
+    margin-top: 50%;
+    margin-left: 50%;
+    z-index: 1;
+}

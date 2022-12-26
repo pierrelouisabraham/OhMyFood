@@ -1,603 +1,572 @@
 @import "libs/reset.scss";
+@import "libs/font.scss";
+@import "libs/spin.scss";
 
-$primary: #FF79DA;
-$secondary: #9356DC;
-$thirdly: #99E2D0;
+$primary: #ff79da;
+$secondary: #9356dc;
+$thirdly: #99e2d0;
 
-h1, h2, p {
-    font-family: "Shrikhand";
-}
-
-p {
-    font-family: "Roboto";
-}
-
-
-
-
-    
 
 .loader {
-    position: fixed;
-    border: 16px solid #f3f3f3; 
-    border-top: 16px solid $secondary; 
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin linear 1s 1 forwards;
-    margin-top: 50%;
-    margin-left: 50%;
-    z-index: 1;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg);     
-       
-    }
-    to{
-        visibility: hidden;
-        opacity: 0;
-        z-index: 0;
-    }
-  }
-
-header {
-    display: flex;
-    align-items: center;
-    margin: 14px;
-
-    i {
-        align-items: flex-start;
-    }
-
-    img {
-        margin-left: 40%;
-
-        @media only screen and (max-width: 767px) {
-            margin-left: 30%;
-        }
-        @media only screen and (min-width: 1024px) {
-            margin-left: 45%;
-        }
-    }
+ @include spin-right-round;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin: 14px;
+
+  i {
+    align-items: flex-start;
+  }
+
+  img {
+    margin-left: 40%;
+
+    @media only screen and (max-width: 767px) {
+      margin-left: 30%;
+    }
+    @media only screen and (min-width: 1024px) {
+      margin-left: 45%;
+    }
+  }
+}
 
 #location {
-    display:flex;
-    background-color: rgb(223, 223, 223);
-    padding: 14px;
-    justify-content: center;
+  display: flex;
+  background-color: rgb(223, 223, 223);
+  padding: 14px;
+  justify-content: center;
 }
 
 i.fa-lg {
-    font-size: 15px;
-    align-self: center;
-    margin-right: 10px;
+  font-size: 15px;
+  align-self: center;
+  margin-right: 10px;
 }
 
 #scout {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgb(239, 238, 238);
-    padding: 30px 10px 30px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(239, 238, 238);
+  padding: 30px 10px 30px 10px;
 
-    h1 {
-        font-weight: 700;
-        font-size: 24px;
-        text-align: center;
-    }
+  h1 {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+  }
 
-    p {
-        font-weight: 400;
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
 }
-  
-#exploration {
-    background: linear-gradient($primary, $secondary);
-    border: 0px solid #a09a9e;
-    border-radius: 21px 21px 21px 21px;
-    box-shadow: 1px 4px 5px 1px #484647;
 
-    p {
-        font-weight: 400;
-        color: white;
-    }
-    &:hover {
-        filter: brightness(110%);
-        box-shadow: 1px 4px 8px 1px #484647;
-    }
+#exploration {
+  background: linear-gradient($primary, $secondary);
+  border: 0px solid #a09a9e;
+  border-radius: 21px 21px 21px 21px;
+  box-shadow: 1px 4px 5px 1px #484647;
+
+  p {
+    font-weight: 400;
+    color: white;
+  }
+  &:hover {
+    filter: brightness(110%);
+    box-shadow: 1px 4px 8px 1px #484647;
+  }
 }
 
 #functioning {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  h2 {
+    font-size: 23px;
+    font-weight: 700;
+    @media only screen and (min-width: 1024px) {
+      text-align: center;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+
+    @media only screen and (min-width: 800px) {
+      display: flex;
+    }
+  }
+
+  li {
+    margin-top: 10px;
+    counter-increment: list;
+    @media only screen and (min-width: 800px) {
+      width: 33%;
+      margin-right: 10px;
+    }
+  }
+
+  li::before {
+    position: absolute;
+    content: counter(list);
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    background: $secondary;
+    margin-top: 0.7em;
+    margin-right: 6em;
+  }
+
+  button {
     display: flex;
-    flex-direction: column;
-    padding: 10px;
-    h2 {
-        font-size: 23px;
-        font-weight: 700;
-        @media only screen and (min-width: 1024px) {
-            text-align: center;
-        }
-    }
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 15px 15px 15px 15px;
+    padding: 16px;
+    background-color: rgb(239, 238, 238);
+    border: 1px;
 
-    ul {
-        list-style-type: none;
-
-        @media only screen and (min-width: 800px) {
-            display: flex;
-        }
+    &:hover {
+      background: rgba($secondary, 0.2);
     }
-
-    li {
-        margin-top: 10px;
-        counter-increment: list;
-        @media only screen and (min-width: 800px) {
-            width: 33%;
-            margin-right: 10px;
-        }
-    }
-
-    li::before {
-        position: absolute;
-        content: counter(list);
-        color: white;
-        border-radius: 50%;
-        padding: 0.2rem 0.5rem;
-        background: $secondary;
-        margin-top: 0.7em;
-        margin-right: 6em;
-    }
-
-    button {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        border-radius: 15px 15px 15px 15px;
-        padding: 16px;
-        background-color: rgb(239, 238, 238);
-        border: 1px;
-        
-        &:hover {
-            background: rgba($secondary, 0.2);
-        }
-    }
+  }
 }
 
 #restaurants {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  padding-top: 40px;
+  background-color: rgb(239, 238, 238);
+
+  h2 {
+    padding-left: 10px;
+    font-size: 23px;
+    font-weight: 700;
+    @media only screen and (min-width: 768px) {
+      text-align: center;
+    }
+  }
+  .mosaique {
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px;
-    margin-top: 30px;
-    padding-top: 40px;
-    background-color: rgb(239, 238, 238);
 
-    h2 {
-        padding-left: 10px;
-        font-size: 23px;
-        font-weight: 700;
-        @media only screen and (min-width: 768px) {
-            text-align: center;
-            
-        }
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
     }
-    .mosaique {
-        display: flex;
-        flex-direction: column;
-
-        @media only screen and (min-width: 768px) {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-
-
-    }
-
+  }
 }
 
 .thumbnails {
+  display: flex;
+  margin-top: 30px;
+  width: 96%;
+  justify-content: center;
+  padding-left: 10px;
+  padding-bottom: 20px;
+
+  @media only screen and (min-width: 768px) {
+    width: 30%;
+    margin-left: 20px;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 22%;
+  }
+
+  a {
     display: flex;
-    margin-top: 30px;
-    width: 96%;
-    justify-content: center;
-    padding-left: 10px;
-    padding-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    filter: drop-shadow(1px 2px 4px grey);
+    color: black;
+    padding-bottom: 10px;
+    text-decoration: none;
+  }
+
+  img {
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .new {
+    display: flex;
+    position: absolute;
+    background: #99e2d0;
+    color: #366636;
+    margin-left: 75%;
+    margin-bottom: 60%;
+    padding: 5px 7px;
+    font-family: "Roboto";
+    font-size: 15px;
 
     @media only screen and (min-width: 768px) {
-        width: 30%;
-        margin-left: 20px;
+      margin-left: 63%;
     }
-    @media only screen and (min-width: 1024px) {
-        width: 22%;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    span {
+      margin-right: 5%;
     }
+  }
 
-    a {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        background-color: white;
-        border-radius: 20px 20px 20px 20px;
-        filter: drop-shadow(1px 2px 4px grey);
-        color: black;
-        padding-bottom: 10px;
-        text-decoration: none;
+  .name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+
+    p {
+      font-weight: 700;
+      font-size: 18px;
     }
+  }
 
-    img {
-        border-radius: 20px 20px 0px 0px;
+  .fa-2x {
+    transition: all 450ms;
+    font-size: 16px;
+    align-self: center;
+    &:hover {
+      color: #9559df;
+      font-weight: 900;
     }
+  }
+}
 
-    .new {
-        display: flex;
-        position: absolute;
-        background: #99E2D0;
-        color: #366636;
-        margin-left: 75%;
-        margin-bottom: 60%;
-        padding: 5px 7px;
-        font-family: "Roboto";
-        font-size: 15px;
-        
-        @media only screen and (min-width: 768px) {
-            margin-left: 63%;
-        }
+.fa-arrow-left {
+  color: black;
+}
 
+@media only screen and (max-width: 620px) {
+  .img-restau-resize {
+    position: absolute;
+  }
+  .img-restau {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 621px) {
+  .img-restau {
+    position: absolute;
+  }
+  .img-restau-resize {
+    display: none;
+  }
+}
+
+hr {
+  width: 45px;
+  background-color: #99e2d0;
+  height: 2px;
+  border: none;
+}
+
+.menu {
+  border-radius: 20px 20px 20px 20px;
+  background-color: #f5f1f5;
+  margin-bottom: 14px;
+  padding-bottom: 27px;
+  position: relative;
+  margin-top: 50%;
+  padding-top: 20px;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #exploration {
+    display: flex;
+    margin-top: 30px;
+    padding: 10px 25px 10px 25px;
+  }
+
+  li {
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-name: fade;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.75s;
+        animation-delay: 0.3s * $i;
+        animation-fill-mode: forwards;
+      }
     }
+  }
+}
 
-    .description {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+.list {
+  margin-top: 20px;
+  padding-left: 10px;
 
-        span {
-            margin-right: 5%;
-        }
+  @media only screen and (min-width: 768px) {
+    width: 33%;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: 400;
+    border-bottom: 5px $thirdly;
+  }
+  li {
+    margin-top: 10px;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.dish-button {
+  display: flex;
+  position: relative;
+  background-color: #ffffff;
+  border: 2px;
+  border-radius: 10px;
+  min-width: 80%;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .checkbox {
+    animation-name: slideBoxOut;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+}
+
+.description-menu {
+  padding: 9px;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  padding: 9px;
+  width: 16%;
+}
+
+.checkbox {
+  display: flex;
+  position: relative;
+  background-color: $thirdly;
+  margin-right: -40%;
+  border-radius: 0 12px 12px 0;
+  width: 30%;
+
+  i.fa-regular {
+    font-weight: 700;
+    color: aqua;
+  }
+  i.fa-circle-check {
+    position: absolute;
+    font-size: 15px;
+    color: white;
+    top: 35%;
+    left: 35%;
+  }
+}
+
+.dish-button:hover {
+  .checkbox {
+    animation-name: slideBoxIn;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+
+  .fa-circle-check {
+    animation: rotateBox;
+    animation-duration: 0.8s;
+    animation-delay: 0.7s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slideBoxIn {
+  0% {
+    margin-right: -40%;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+@keyframes slideBoxOut {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: -40%;
+  }
+}
+
+@keyframes rotateBox {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fade {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 100%;
+  }
+}
+
+@keyframes likeAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    color: #9559df;
+  }
+}
+
+.restaurant-name {
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+
+  h1 {
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: 900;
+  }
+
+  .fa-2x {
+    padding-right: 15px;
+    font-size: 18px;
+    opacity: 1;
+
+    &:hover {
+      color: #9559df;
+      font-weight: 900;
+      animation-name: likeAnimation;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in;
+      animation-duration: 0.6s;
     }
+  }
+}
 
-    .name {
-        display: flex;
-        flex-direction: column;
-        margin-left: 15px;
+.dish {
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-        p {
-            font-weight: 700;
-            font-size: 18px;
-        }
+.composition {
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  align-self: flex-end;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+#explore {
+  display: flex;
+  justify-content: center;
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+footer {
+  background-color: #353535;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  @media only screen and (min-width: 768px) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    @media only screen and (max-width: 768px) {
+      width: 32%;
+      padding-top: 2%;
+      padding-bottom: 2%;
     }
-
-        .fa-2x {
-         transition: all 450ms;
-         font-size: 16px;
-         align-self: center;
-            &:hover {   
-                color: #9559df;
-                font-weight: 900;
-            }
-        }
+    @media only screen and (min-width: 769px) {
+      width: 15%;
+      padding-top: 1%;
+      padding-bottom: 1%;
     }
+  }
 
-    .fa-arrow-left {
-        color: black;
-    }
+  i {
+    color: #ffffff;
+    font-size: 8px;
+    width: 2%;
+  }
 
-    @media only screen and (max-width: 620px) {
-     .img-restau-resize {   
-        position: absolute;
-    }
-    .img-restau {
-        display: none;
-    }
-    }
+  p {
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-left: 10px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
 
-    @media only screen and (min-width: 621px) {
-        .img-restau {
-            position: absolute;
-        }
-        .img-restau-resize {
-            display: none;
-        }
-    }
+.footer-suggest {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 
-    hr {
-        width: 45px;
-        background-color: #99E2D0;
-        height: 2px;
-        border: none;
-    }
-
-    .menu {
-        border-radius: 20px 20px 20px 20px;
-        background-color: #f5f1f5;;
-        margin-bottom: 14px;
-        padding-bottom: 27px;
-        position: relative;
-        margin-top: 50%;
-        padding-top: 20px;
-        
-        @media only screen and (min-width: 768px) {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        #exploration {
-            display: flex;
-            margin-top: 30px;
-            padding: 10px 25px 10px 25px;
-        }
-
-        li {
-            @for $i from 1 through 4 {
-                &:nth-child(#{$i}) {
-                    animation-name: fade;
-                    animation-iteration-count: 1;
-                    animation-timing-function: ease-in;
-                    animation-duration: 0.750s; 
-                    animation-delay: 0.3s * $i;
-                    animation-fill-mode: forwards;
-                }
-            }
-        }
-        
-
-    }
-
-    .list {
-        margin-top: 20px;
-        padding-left: 10px;
-
-        @media only screen and (min-width: 768px) {
-            width: 33%;
-        }
-        
-        h2 {
-            font-size: 15px;
-            font-weight: 400;
-            border-bottom: 5px $thirdly;
-        }
-        li {
-            margin-top: 10px;
-            visibility: hidden;
-            opacity: 0;
-        }   
-    }
-
-    .dish-button {
-        display: flex;
-        position: relative;
-        background-color: #ffffff;
-        border: 2px;
-        border-radius: 10px;
-        min-width: 80%;
-        justify-content: space-between;
-        overflow: hidden;
-
-        .checkbox{
-            animation-name: slideBoxOut;
-            animation-duration: 1.5s;
-            animation-direction: normal;
-            animation-fill-mode: forwards;
-        }
-        
-    }
-
-    .description-menu {
-        padding: 9px;
-        width: 85%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .price {
-        padding: 9px;
-        width: 16%;
-    }
-
-    .checkbox {
-        display: flex;
-        position: relative;
-        background-color: $thirdly;
-        margin-right: -40%;
-        border-radius: 0 12px 12px 0;
-        width: 30%;
-        
-        i.fa-regular {
-            font-weight: 700;
-            color: aqua;
-        }
-        i.fa-circle-check {
-            position: absolute;
-            font-size: 15px;
-            color: white;
-            top:35%;
-            left:35%;
-        }
-
-    }
-
-    .dish-button:hover {
-
-        .checkbox{
-            animation-name: slideBoxIn;
-            animation-duration: 1.5s;
-            animation-direction: normal;
-            animation-fill-mode: forwards;
-        }
-
-        .fa-circle-check {
-            animation: rotateBox;
-            animation-duration: 0.8s;
-            animation-delay: 0.7s;
-            animation-direction: normal;
-            animation-fill-mode: forwards;
-        }
-
-    }
-
-
-    @keyframes slideBoxIn{
-        0%{
-            margin-right: -40%;
-        }
-        100%{
-          
-            margin-right: 0;
-        }
-    }
-
-    @keyframes slideBoxOut{
-        0%{
-            margin-right: 0;
-        }
-        100%{
-          
-            margin-right: -40%;
-        }
-    }
-
-    @keyframes rotateBox {
-        0% {
-            transform: rotate(180deg);
-        }
-        100% {
-            transform: rotate(0deg);
-        }
-    }
-
-    @keyframes fade {
-        from {
-            visibility: hidden;
-            opacity: 0;
-        }
-        to {
-            visibility: visible;
-            opacity: 100%;
-        }
-    }
-
-    @keyframes likeAnimation {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-            color: #9559df;
-        }
-    }
-
-    .restaurant-name {
-        display: flex;
-        justify-content: space-between;
-        @media only screen and (min-width: 768px) {
-            width: 100%;
-        }
-
-        h1{
-            padding-left: 10px;
-            font-size: 17px;
-            font-weight: 900;
-        }
-
-        .fa-2x {
-            padding-right: 15px;        
-            font-size: 18px;
-            opacity: 1;
-
-         &:hover {   
-            color: #9559df;
-            font-weight: 900;
-            animation-name: likeAnimation;
-            animation-iteration-count: 1;
-            animation-timing-function: ease-in;
-            animation-duration: 0.6s;
-         }
-        }
-    }
-
-    .dish {
-        font-size: 14px;
-        font-weight: 700;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .composition {
-        font-size: 12px;
-        font-weight: 400;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .price {
-        align-self: flex-end;
-        font-weight: 600;
-        font-size: 11px;
-    }
-
-    #explore {
-        display: flex;
-        justify-content: center;
-        @media only screen and (min-width: 768px) {
-            width: 100%;
-        }
-    }
-    
-    footer {
-        background-color: #353535;
-        padding-bottom: 2%;
-        padding-top: 2%;
-    
-        img {
-
-            @media only screen and (max-width: 768px) {
-                width: 32%;
-                padding-top: 2%;
-                padding-bottom: 2%;
-            }
-            @media only screen and (min-width: 769px) {
-                width: 15%;
-                padding-top: 1%;
-                padding-bottom: 1%;
-            }
-        }
-
-        i {
-            color: #ffffff;
-            font-size: 8px;
-            width: 2%;
-     }
-
-        p {
-            color: #ffffff;
-            font-weight: 100;
-            font-size: 13px;
-            padding-top: 3px;
-            padding-left: 10px;
-        }
-    }
-
-    .footer-suggest{
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-    
-
-        p {
-        font-weight: 100;
-        margin-left: 2px;
-        }
-    }
-
-
-@media only screen and (max-width: 800px) {
-    
+  p {
+    font-weight: 100;
+    margin-left: 2px;
+  }
 }
