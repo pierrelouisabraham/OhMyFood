@@ -292,7 +292,6 @@ hr {
 .menu {
   border-radius: 20px 20px 20px 20px;
   background-color: #f5f1f5;
-  margin-bottom: 14px;
   padding-bottom: 27px;
   position: relative;
   margin-top: 50%;
@@ -521,8 +520,8 @@ hr {
 
 footer {
   background-color: #353535;
-  padding-bottom: 2%;
-  padding-top: 2%;
+  padding-bottom: 8%;
+  padding-top: 8%;
   @media only screen and (min-width: 768px) {
     align-items: center;
     display: flex;
@@ -532,13 +531,10 @@ footer {
   img {
     @media only screen and (max-width: 768px) {
       width: 32%;
-      padding-top: 2%;
-      padding-bottom: 2%;
     }
     @media only screen and (min-width: 769px) {
       width: 15%;
-      padding-top: 1%;
-      padding-bottom: 1%;
+
     }
   }
 
@@ -555,6 +551,7 @@ footer {
     padding-top: 3px;
     padding-left: 10px;
   }
+
   a {
     text-decoration: none;
   }
