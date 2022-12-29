@@ -550,6 +550,9 @@ footer {
     font-size: 13px;
     padding-top: 3px;
     padding-left: 10px;
+    @media screen and (min-width: 1024px) {
+        font-size: 18px;
+    }
   }
 
   a {
