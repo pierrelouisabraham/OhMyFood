@@ -83,15 +83,18 @@ i.fa-lg {
 }
 
 #exploration {
-  background: linear-gradient($primary, $secondary);
+  background: linear-gradient(#ff79da, #9356dc);
   border: 0px solid #a09a9e;
   border-radius: 21px 21px 21px 21px;
   box-shadow: 1px 4px 5px 1px #484647;
+  font-size: 16px;
+  margin-top: 11px;
+  margin-bottom: 10px;
+  padding: 16px;
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 400;
 
-  p {
-    font-weight: 400;
-    color: white;
-  }
   &:hover {
     filter: brightness(110%);
     box-shadow: 1px 4px 8px 1px #484647;
@@ -138,7 +141,7 @@ i.fa-lg {
     margin-right: 6em;
   }
 
-  button {
+  .function-button {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -244,9 +247,13 @@ i.fa-lg {
     flex-direction: column;
     margin-left: 15px;
 
+    h3 {
+      margin: 0;
+    }
+
     p {
-      font-weight: 700;
-      font-size: 18px;
+      font-weight: 400;
+      font-size: 16px;
     }
   }
 
